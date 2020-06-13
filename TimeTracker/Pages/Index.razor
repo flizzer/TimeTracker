@@ -1,0 +1,75 @@
+﻿@page "/"
+
+<h1>Welcome to TimeTracker!</h1>
+
+Please enter your time...
+
+<EditForm>
+    <tr>
+        <th>
+            Project
+        </th>
+        <th>
+            Task
+        </th>
+        <th>
+            Billing Area
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Start Time
+        </th>
+        <th>
+            End Time
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Billing Rate
+        </th>
+        <th>
+            Outside?
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <InputText>Project Name</InputText>
+        </td>
+        <td>
+            <InputText>Task Name</InputText>
+        </td>
+        <td>
+            <InputText>Billing Area</InputText>
+        </td>
+        <td>
+            <InputDate TValue="DateTime">Date</InputDate>
+        </td>
+        <td>
+            <time>Start Time</time>
+        </td>
+        <td>
+            <time>End Time</time>
+        </td>
+        <td>
+            <InputText>Description</InputText>
+        </td>
+        <td>
+            <InputNumber TValue="float">Billing Rate</InputNumber>
+        </td>
+        <td>
+            <InputCheckbox>Outside?</InputCheckbox>
+        </td>
+        <td>
+            <button type="submit">Submit</button>
+        </td>
+    </tr>
+</EditForm>
+
+
+@code{
+    //private TimeEntryMod
+}
+
