@@ -1,0 +1,102 @@
+﻿@page "/addTime"
+
+<EditForm Model="@timeEntryModel">
+    <DataAnnotationsValidator />
+
+
+    <p>
+        <label>
+            Project:
+        </label>
+        <InputSelect @bind-Value="timeEntryModel.Project">
+            <option>Choose Project...</option>
+            <option>Admin</option>
+        </InputSelect>
+    </p>
+            
+    <p>
+        <label>
+            Task:
+        </label>
+        <InputSelect @bind-Value="timeEntryModel.Task">
+            <option value="">Choose Task...</option>
+            <option value="Email/Other">Email/Other</option>
+            <option value="PTS">PTS</option>
+            <option value="Mentoring and Training">Mentoring and Training</option>
+
+        </InputSelect>
+    </p>
+            
+    <p>
+        <label>
+            Billing Area:
+        </label>
+        <InputSelect @bind-Value="timeEntryModel.BillingArea">
+            <option value="">Choose Billing Area...</option>
+            <option value="None">None</option>
+            <option value="Unbillable">Unbillable</option>
+            <option value="Billable">Billable</option>
+        </InputSelect>
+    </p>
+
+    <p>
+        <label>
+            Current Date: @timeEntryModel.EntryDate
+        </label>
+        
+    </p>
+            
+    <p>
+        <label>
+            Start Time:
+        </label>
+        <InputSelect @bind-Value="timeEntryModel.AvailableTimes">@timeEntryModel.SelectedStartTime</InputSelect>        
+    </p>
+
+    <p>
+        <label>
+            End Time:
+        </label>
+        <InputSelect @bind-Value="timeEntryModel.AvailableTimes">@timeEntryModel.SelectedEndTime</InputSelect>
+    </p>
+        
+    <p>
+        <label>
+            Duration:
+        </label>
+        <InputText @bind-Value="timeEntryModel.Duration"></InputText>
+    </p>
+            
+    <p>
+        <label>
+            Description:
+        </label>
+        <InputText @bind-Value="timeEntryModel.Description"></InputText>
+    </p>
+            
+    <p>
+        <InputNumber @bind-Value="timeEntryModel.BillingRate"></InputNumber>
+
+    </p>
+            
+    <p>
+        <label>
+            Outside?
+        </label>
+        <InputCheckbox @bind-Value="timeEntryModel.IsOutside">Outside?</InputCheckbox>
+    </p>
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+    <ValidationSummary />
+
+</EditForm>
+
+
+@code{
+
+    private TimeEntryModel timeEntryModel = new TimeEntryModel();
+}
+
