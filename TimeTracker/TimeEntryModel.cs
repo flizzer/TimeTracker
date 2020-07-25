@@ -26,7 +26,7 @@ public class TimeEntryModel
     [Required]
     public IList<DateTime> AvailableTimes
     {
-        get { DateTime }
+        get { return new List<DateTime>() { DateTime.Now } ; }
         set { }
     }
 
