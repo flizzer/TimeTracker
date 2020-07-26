@@ -6,7 +6,7 @@
 <br/>
 <br/>
 
-<table class="table">
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -39,8 +39,27 @@
         </tr>
     </thead>
     
-</table>
+</table>*@
+
+<RadzenGrid AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" AllowPaging="true" PageSize="4"
+            AllowSorting="true" Data="@timeEntries" TItem="TimeEntry">
+    <Columns>
+        <RadzenGridColumn TItem="TimeEntry" Property="Project" Title="Project"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="Task" Title="Task"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="BillingArea" Title="Billing Area"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="SelectedStartTime" Title="Start Time"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="SelectedEndTime" Title="End Time"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="Duration" Title="Duration"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="Description" Title="Description"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="BillingRate" Title="Billing Rate"/>
+        <RadzenGridColumn TItem="TimeEntry" Property="IsOutside" Title="Outside?"/>
+    </Columns>
+</RadzenGrid>
 
 <!--TODO:  implement list of time entries -- bhd-->
+
+@code {
+    IEnumerable<TimeEntry> timeEntries;
+}
 
 

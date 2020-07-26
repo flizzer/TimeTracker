@@ -1,6 +1,6 @@
 ﻿@page "/addTime"
 
-<EditForm Model="@timeEntryModel">
+<EditForm Model="@timeEntry">
     <DataAnnotationsValidator />
 
 
@@ -8,7 +8,7 @@
         <label>
             Project:
         </label>
-        <InputSelect @bind-Value="timeEntryModel.Project">
+        <InputSelect @bind-Value="timeEntry.Project">
             <option>Choose Project...</option>
             <option>Admin</option>
         </InputSelect>
@@ -18,7 +18,7 @@
         <label>
             Task:
         </label>
-        <InputSelect @bind-Value="timeEntryModel.Task">
+        <InputSelect @bind-Value="timeEntry.Task">
             <option value="">Choose Task...</option>
             <option value="Email/Other">Email/Other</option>
             <option value="PTS">PTS</option>
@@ -31,7 +31,7 @@
         <label>
             Billing Area:
         </label>
-        <InputSelect @bind-Value="timeEntryModel.BillingArea">
+        <InputSelect @bind-Value="timeEntry.BillingArea">
             <option value="">Choose Billing Area...</option>
             <option value="None">None</option>
             <option value="Unbillable">Unbillable</option>
@@ -41,7 +41,7 @@
 
     <p>
         <label>
-            Current Date: @timeEntryModel.EntryDate
+            Current Date: @timeEntry.EntryDate
         </label>
         
     </p>
@@ -50,32 +50,32 @@
         <label>
             Start Time:
         </label>
-        <InputSelect @bind-Value="timeEntryModel.AvailableTimes">@timeEntryModel.SelectedStartTime</InputSelect>        
+        <InputSelect @bind-Value="timeEntry.AvailableTimes">@timeEntry.SelectedStartTime</InputSelect>        
     </p>
 
     <p>
         <label>
             End Time:
         </label>
-        <InputSelect @bind-Value="timeEntryModel.AvailableTimes">@timeEntryModel.SelectedEndTime</InputSelect>
+        <InputSelect @bind-Value="timeEntry.AvailableTimes">@timeEntry.SelectedEndTime</InputSelect>
     </p>
         
     <p>
         <label>
             Duration:
         </label>
-        <InputText @bind-Value="timeEntryModel.Duration"></InputText>
+        <InputText @bind-Value="timeEntry.Duration"></InputText>
     </p>
             
     <p>
         <label>
             Description:
         </label>
-        <InputText @bind-Value="timeEntryModel.Description"></InputText>
+        <InputText @bind-Value="timeEntry.Description"></InputText>
     </p>
             
     <p>
-        <InputNumber @bind-Value="timeEntryModel.BillingRate"></InputNumber>
+        <InputNumber @bind-Value="timeEntry.BillingRate"></InputNumber>
 
     </p>
             
@@ -83,7 +83,7 @@
         <label>
             Outside?
         </label>
-        <InputCheckbox @bind-Value="timeEntryModel.IsOutside">Outside?</InputCheckbox>
+        <InputCheckbox @bind-Value="timeEntry.IsOutside">Outside?</InputCheckbox>
     </p>
 
     <p>
@@ -97,6 +97,6 @@
 
 @code{
 
-    private TimeEntryModel timeEntryModel = new TimeEntryModel();
+    private TimeEntry timeEntry = new TimeEntry();
 }
 
